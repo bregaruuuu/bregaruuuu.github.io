@@ -48,8 +48,6 @@ body{
 
  
 
-        /* inizio centro*/
-
         #breadcrumb ul{
 
             padding-left: 1em;
@@ -146,9 +144,6 @@ body{
 
         }
 
-        /* fine centro*/
-
-        /* inizio upper*/
 
         #search{
 
@@ -194,11 +189,11 @@ body{
 
         #sprite{
 
-            width: 92.8px;
+            width: 208.7px;
 
-            height: 90px;
+            height: 208.5px;
 
-            background: url('sprite (1).jpg') -10px -10px;
+            background: url('hand-drawn-animation-frames-element-collection_23-2149845056.avif') 0 0;
 
         }
 
