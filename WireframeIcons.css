@@ -4,6 +4,10 @@ body{
 
 }
 
+.gatto{
+    height  50px;
+    width 50px;
+}
 .estremo{
 
             background-color: rgb(119, 160, 255);
