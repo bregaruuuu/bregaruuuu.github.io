@@ -4,7 +4,7 @@ body{
 
 table {
 
-    border: 1px solid black;
+    border: 2px solid black;
 
     table-layout: fixed;
 
@@ -24,7 +24,7 @@ table th, table td, table tr{
 
     width: 90px;
 
-    border: 1px solid black;
+    border: 2px solid black;
 
     font-family: 'Lucida Sans Unicode', 'Trebuchet MS', 'Lucid', 'Times New Roman';
 
