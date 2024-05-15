@@ -160,7 +160,7 @@ body{
 
         #search input{
 
-            border-color: black;
+            border-color: red;
 
             border-radius: 2px;
 
@@ -186,7 +186,7 @@ body{
 
             float: left;
 
-            font-size: xx-large;
+            font-size: x-large;
 
         }
 
