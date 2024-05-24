@@ -4,7 +4,7 @@ body{
 
 }
 
-.gatto{
+.calderone{
     height:50px;
     width:50px;
 }
@@ -14,6 +14,12 @@ body{
 
             height: 208.5px;
 
-            background: url('hand-drawn-animation-frames-element-collection_23-2149845056.avif') 0 0;
+            background: url('cauldron-with-love-potion-motion-sequence-animation-pink-heart-cloud-magic-elixir_107791-6752.jpg') 0 0;
 
         }
+div.grande{
+    margin: 5% auto 0 auto;
+}
+div.piccolo{
+    
+}
