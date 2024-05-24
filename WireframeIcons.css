@@ -4,23 +4,20 @@ body{
     background-color: rebecca purple;
 
 }
+ #sprite{
 
-.calderone{
-    height:50px;
-    width:50px;
-}
-        #sprite{
+    width: 208.7px;
 
-            width: 208.7px;
+    height: 208.5px;
 
-            height: 208.5px;
-
-            background: url('cauldron-with-love-potion-motion-sequence-animation-pink-heart-cloud-magic-elixir_107791-6752.jpg') 0 0;
+    background: url('cauldron-with-love-potion-motion-sequence-animation-pink-heart-cloud-magic-elixir_107791-6752.jpg') 0 0;
 
         }
 div.grande{
-    margin: 5% auto 0 auto;
+    float: left;
+    margin: 5vh 5vh;
 }
 div.piccolo{
-    
+    float: right;
+    margin: 5vh 5vh;
 }
