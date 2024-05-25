@@ -6,7 +6,7 @@ body{
 
 .estremo{
 
-            background-color: rgb(144,238,144);
+            background-color: rgb(255, 26, 26);
 
             height: 20vh;
 
@@ -18,7 +18,7 @@ body{
 
         .centro{
 
-            background-color: rgb(75,0,130);
+            background-color: rgb(255, 204, 204);
 
             float: left;
 
@@ -132,7 +132,7 @@ body{
 
         #articoli div{
 
-            background-color: rgb(75, 129, 255);
+            background-color: rgb(185, 70, 70);
 
             width: 10%;
 
