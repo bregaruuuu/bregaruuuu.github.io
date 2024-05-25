@@ -1,97 +1,48 @@
 body{
-
     margin: 0;
-
 }
-
 .estremo{
-
             background-color: rgb(255, 26, 26);
-
             height: 20vh;
-
             width: 100%;
-
             margin: 0;
-
         }
-
         .centro{
-
             background-color: rgb(255, 204, 204);
-
             float: left;
-
             height: 80vh;
-
             width: 65%;
-
             margin: 0.5% 0.5% 0 0.5%;
-
         }
-
         .lato{
-
             background-color: rgb(255,165,0);
-
             float: left;
-
             height: 80vh;
-
             width: 17%;
-
             margin: 0.5% 0 0.5% 0;
-
         }
-
- 
-
- 
-
         #breadcrumb ul{
-
             padding-left: 1em;
-
         }
-
         #breadcrumb li{
-
             display: inline;
-
             margin-top: 2vh;
-
         }
-
         #breadcrumb li:not(:last-child):after{
-
             content: ">";
-
         }
-
         #banner{
-
             box-sizing: border-box;
-
             height: 14vh;
-
             width: 90%;
-
             margin: 3% 5% 0 5%;
-
             background-color: rgb(255,222,173);
-
             padding-top: 4vh;
-
             padding-bottom: 4vh;
-
             text-align: center;
-
             font-size: xx-large;
-
         }
-
         #titoli{
-
             background-color: rgb(0, 255, 255);
 
             height: auto;
