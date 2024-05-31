@@ -2,54 +2,9 @@
 <html>
 <head>
 <title>Official I Zappatori F.C. site</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-}
-nav {
-  background-color: #f5f5f5;
-  padding: 10px;
-}
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-nav ul li {
-  margin-right: 20px;
-}
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-}
-main {
-  padding: 20px;
-}
-section {
-  margin-bottom: 20px;
-}
-#adidas{
-  height: 250px;
-  width: 300px;
-}
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-</style>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const sections = document.querySelectorAll("section");
@@ -83,51 +38,81 @@ document.addEventListener("DOMContentLoaded", function() {
     <li><a href="#contattaci">Contattaci</a></li>
   </ul>
 </nav>
+<center>
 <main>
   <section id="home">
     <h2>Benvenuti nella pagina principale!</h2>
-    <p>Qui puoi trovare informazioni sulla nostra squadra di calcio.</p>
+    <p class="cent">Qui puoi trovare informazioni sulla nostra squadra di calcio.</p>
+
+    <img class="cent" id="Pimg" src="fotoSc.png" alt="Foto AI">
+    <p class="cent">Foto di squadra generata con AI</p>
+
   </section>
   <section id="tifoseria" hidden>
     <h2>Tifoseria</h2>
-    <p>tpe rebora, 3ci. Clicca qui per acquistare i biglietti per la cogestione.</p>
-    <a href="https://www.acmilan.com/it/Biglietti">Acquista i biglietti qui</a>
+    <p class="cent">tpe rebora, 3ci. Clicca qui per acquistare i biglietti per la cogestione.</p>
+    <a href="https://singletickets.acmilan.com/?_gl=1*9xstrj*_ga*ODU0NzAwMzE2LjE3MTcxNDk5NDg.*_ga_HB54P1QRS8*MTcxNzE0OTk0NC4xLjEuMTcxNzE0OTk5NS4wLjAuMTQxNzM2NDE2Mg..*_fplc*R0dNdGFvWkpKSXJlJTJGRFRVWUhsWEVsbWhBJTJCMW5lN0N2WGdXVnRHTVhFcE95SVJzaUVRT2tpS3h5dXIlMkZwMGJDdCUyRnRXY1VTaTdib2s1b2hIcWJIMGZpVEVLalhpZEc2VEMycm9kUHZCb1VkcnBjMjdBalYxRTIlMkJEJTJCRyUyQnVrSUElM0QlM0Q." target="blank">Acquista i biglietti qui</a>
   </section>
   <section id="giocatori" hidden>
     <h2>Giocatori</h2>
-    <p>Bressi Cristian (7)Nato a Nerviano nel 2007, tifoso juventino dalla nascita e attualmente in forza ai Zappatori F.C. Si sta già pregustando la vittoria della cogestione.</p>
-    <p>Halilaj Enea (8)Nato in Italia, ma il suo sangue è albanese, precisamente da Scutari, ha delle caratteristiche che lo rendono paragonabile ad Armando Broja, Kristjan Asllani ed Nadim Bajrami. Anche lui in vista della cogestione è  pronto a far divertire le signorine sugli spalti con le sue prodezze.</p>
-    <p>Calugaru Gabriele(16)</p>
-    <p>Cainarca Alessio (6) Direttamente da Cornaredo, dove per lui il calcio è prevalso alla criminalità, egli è  preparato a trionfare  nella cogestione ed ergere il trofeo e tutto ciò è innegabile, ma è ancor più pronto a dimostrare la sua notevole capacità di annichilire gli avversari spaccando a loro tante caviglie e crociati, e poi divertirsi con il vero premio bombandosi tutta la curva</p>
-    <p>Bonfiglio Ettore(9)Garbagnatese DOC come Calugaru e il Giova, rugbista di professione, è venuto a dare una mano per i suoi colleghi dei Zappatori.F.C. per la cogestione e nonostante la mascella rotta qualche giorno fa è carico per spaccare e far bella figura davanti alle ladies.</p>
-    <p>Ruggiero Alessio(90) ( o Giovanni Senzaterra per gli amici), Originario di Napoli (Scampia), ormai bocciato si è unito ai Zappatori per riscattare la sua stagione scolastica, che può dare un grosso contributo grazie alla sua disabilità mostrata a pallavolo e soppratuto al suo superpotere dell'odore, dove grazie alle abitudini napoletane di lavarsi ogni volta che il Napoli vince la champions, potrà intossicare gli avversari e portarci sul tetto della competizione.</p>
+    <p> <span class="nome">Bressi Cristian (7)</span> <br> Nato a Nerviano nel 2007, tifoso juventino dalla nascita e attualmente in forza ai Zappatori F.C. Si sta già pregustando la vittoria della cogestione.</p>
+    <p><span class="nome">Halilaj Enea (8)</span> <br> Nato in Italia, ma il suo sangue è albanese, precisamente da Scutari, ha delle caratteristiche che lo rendono paragonabile ad Armando Broja, Kristjan Asllani ed Nadim Bajrami. Anche lui in vista della cogestione è  pronto a far divertire le signorine sugli spalti con le sue prodezze.</p>
+    <p><span class="nome">Calugaru Gabriele(16)</span></p>
+    <p><span class="nome">Cainarca Alessio (6)</span> <br> Direttamente da Cornaredo, dove per lui il calcio è prevalso alla criminalità, egli è  preparato a trionfare  nella cogestione ed ergere il trofeo e tutto ciò è innegabile, ma è ancor più pronto a dimostrare la sua notevole capacità di annichilire gli avversari spaccando a loro tante caviglie e crociati, e poi divertirsi con il vero premio bombandosi tutta la curva</p>
+    <p><span class="nome">Bonfiglio Ettore(9)</span> <br> Garbagnatese DOC come Calugaru e il Giova, rugbista di professione, è venuto a dare una mano per i suoi colleghi dei Zappatori.F.C. per la cogestione e nonostante la mascella rotta qualche giorno fa è carico per spaccare e far bella figura davanti alle ladies.</p>
+    <p><span class="nome">Ruggiero Alessio(90)</span> ( o Giovanni Senzaterra per gli amici) <br> Originario di Napoli (Scampia), ormai bocciato si è unito ai Zappatori per riscattare la sua stagione scolastica, che può dare un grosso contributo grazie alla sua disabilità mostrata a pallavolo e soppratuto al suo superpotere dell'odore, dove grazie alle abitudini napoletane di lavarsi ogni volta che il Napoli vince la champions, potrà intossicare gli avversari e portarci sul tetto della competizione.</p>
   </section>
   <section id="news" hidden>
     <h2>News</h2>
       <section id="news" hidden>
   <div id="notizie">
-    <div>
-      <h3>Anile Shock</h3>
-      <p>La dichiarazione di Anile che ci ha lasciati sconvolti</p>
-      <a href="#">Leggi di più</a>
-    </div>
-    <div>
-      <h3>Cogestione: here we go</h3>
-      <p>Svelata la data della cogestione</p>
-      <a href="#">Leggi di più</a>
-    </div>
-      <h3>Il tragico infortunio di Bonfiglio</h3>
-      <p>Bonfiglio si rompe la mascella: quando rientra e sarà presente alla cogestione?</p>
-      <a href="#">Leggi di più</a>
-  </div>
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <h5><span class="nome">Anile Shock</span></h5> : La dichiarazione di Anile che ci ha lasciati sconvolti
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              SCRIVI QUA ANLILE
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <h5><span class="nome">Cogestione:</span> here we go</h5> : Svelata la data della cogestione
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              QUA COGESTIONE
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <h5><span class="nome">Il tragico infortunio di Bonfiglio</span></h5> : Bonfiglio si rompe la mascella: quando rientra e sarà presente alla cogestione?
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              QUA ETTORE MASCELLA
+            </div>
+          </div>
+        </div>
+      </div>
+
 </section>
 
   </section>
   <section id="staff" hidden>
     <h2>Staff</h2>
-    <p> Mental coach: Lombardi Mattia: Un vero figlio di Nervialzn, farà da Mental coach/giocatore poichè la società crede molto nelle sue qualità soprattutto poichè il suo voto più basso quest'anno è un 9.5. Grazie al contributo di "Bombardi" possiamo stare certi che la coppa verrà da noi.<p>
-    <p>Invitato Speciale/sostenitore/mentore: Bassi Gabriele: Ragazzo per bene, 16 anni di vita tutti a Nerviano, il talento per l'informatica l'ha portato a incrociare le sue strade con quella dei nostri giocatori, "Shorts" ha scelto umilmente di aiutarci e documentare tutto il nostro viaggio all'interno della competizione.</p>
-    <p>Allenatore/ Dirigente: Giovanni P: Origini calabresi, dopo gli anni di attività a Garbagnate ha deciso da quest'anno di prestare i suoi servigi per I Zappatori tramite le sue doti acquisite dagli allenatori e le sue perle da dirigente.</p>
+    <p > Mental coach: <br> <span class="nome">Lombardi Mattia:</span>  Un vero figlio di Nervialzn, farà da Mental coach/giocatore poichè la società crede molto nelle sue qualità soprattutto poichè il suo voto più basso quest'anno è un 9.5. Grazie al contributo di "Bombardi" possiamo stare certi che la coppa verrà da noi.<p>
+    <p >Invitato Speciale/sostenitore/mentore: <br> <span class="nome">Bassi Gabriele:</span>  Ragazzo per bene, 16 anni di vita tutti a Nerviano, il talento per l'informatica l'ha portato a incrociare le sue strade con quella dei nostri giocatori, "Shorts" ha scelto umilmente di aiutarci e documentare tutto il nostro viaggio all'interno della competizione.</p>
+    <p >Allenatore/ Dirigente: <br> <span class="nome">Giovanni P:</span>  Origini calabresi, dopo gli anni di attività a Garbagnate ha deciso da quest'anno di prestare i suoi servigi per I Zappatori tramite le sue doti acquisite dagli allenatori e le sue perle da dirigente.</p>
   </section>
   <section id="sponsor" hidden>
     <h2>Sponsor</h2>
@@ -137,12 +122,15 @@ document.addEventListener("DOMContentLoaded", function() {
                                         
   </section>
   <section id="contattaci" hidden>
-    <h2>Contattaci</h2>
-    <p>Ci puoi trovare presso segreteria in via Raffaello Sanzio 2, contattare il numero 389 354 7733 oppure su Instagram @I_ZappatoriF.C.</p>
+    <h2><span class="nome">Contattaci : </span></h2>
+    <p class="cent">Ci puoi trovare presso segreteria in via Raffaello Sanzio 2, contattare il numero 389 354 7733 oppure su Instagram @I_ZappatoriF.C.</p>
   </section>
 </main>
+</center>
 <footer>
-  <p>© 2024 Squadra di calcio. Tutti i diritti riservati.</p>
+  <p class="cent">© 2024 Squadra di calcio. Tutti i diritti riservati.</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
