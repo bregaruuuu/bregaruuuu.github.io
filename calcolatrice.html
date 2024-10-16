@@ -1,25 +1,90 @@
 <!DOCTYPE html>
-<html>
+<html lang="it">
 <head>
-<title>Title of the document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatrice Minima</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+        input[type="text"] {
+            margin: 5px;
+            padding: 10px;
+            width: 200px;
+            font-size: 1.2em;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
-<script>
-  
-</script>
-
 <body>
-< form name "calcolatrice" >
-  <  input type "text" >
-  <  input type "text" >
-  <  input type "button" value "*" >
-   <  input type "button" value "/" >
-   <  input type "button" value "-" >
-   <  input type "button" value "+" >
-   <  input type "reset" value "Cancella" >
-   <  input type "text" name ="risultato" value= "" >
-  
-  <form></form>
-</body>
+    <div class="container">
+        <h1>Calcolatrice Minima</h1>
 
+        <!-- Input per i numeri -->
+        <input id="numero1" type="text" placeholder="Inserisci il primo numero">
+        <input id="numero2" type="text" placeholder="Inserisci il secondo numero">
+
+        <!-- Bottoni per le operazioni -->
+        <div class="buttons">
+            <button onclick="calcola('+')">Somma</button>
+            <button onclick="calcola('-')">Sottrazione</button>
+            <button onclick="calcola('*')">Moltiplicazione</button>
+            <button onclick="calcola('/')">Divisione</button>
+        </div>
+
+        <!-- Input di sola lettura per il risultato -->
+        <input id="risultato" type="text" placeholder="Risultato" readonly>
+    </div>
+
+    <script>
+        function calcola(operazione) {
+            // Ottieni i valori inseriti dall'utente
+            var num1 = parseFloat(document.getElementById('numero1').value);
+            var num2 = parseFloat(document.getElementById('numero2').value);
+            var risultato;
+
+            // Verifica se i numeri inseriti sono validi
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Per favore inserisci numeri validi');
+                return;
+            }
+
+            // Esegui l'operazione selezionata
+            switch (operazione) {
+                case '+':
+                    risultato = num1 + num2;
+                    break;
+                case '-':
+                    risultato = num1 - num2;
+                    break;
+                case '*':
+                    risultato = num1 * num2;
+                    break;
+                case '/':
+                    if (num2 === 0) {
+                        alert('Non è possibile dividere per zero');
+                        return;
+                    }
+                    risultato = num1 / num2;
+                    break;
+            }
+
+            // Mostra il risultato nell'input di sola lettura
+            document.getElementById('risultato').value = risultato;
+        }
+    </script>
+</body>
 </html>
