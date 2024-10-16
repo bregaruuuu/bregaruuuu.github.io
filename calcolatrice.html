@@ -33,11 +33,11 @@
     <div class="container">
         <h1>Calcolatrice Minima</h1>
 
-        <!-- Input per i numeri -->
+        
         <input id="numero1" type="text" placeholder="Inserisci il primo numero">
         <input id="numero2" type="text" placeholder="Inserisci il secondo numero">
 
-        <!-- Bottoni per le operazioni -->
+       
         <div class="buttons">
             <button onclick="calcola('+')">Somma</button>
             <button onclick="calcola('-')">Sottrazione</button>
@@ -45,24 +45,24 @@
             <button onclick="calcola('/')">Divisione</button>
         </div>
 
-        <!-- Input di sola lettura per il risultato -->
+
         <input id="risultato" type="text" placeholder="Risultato" readonly>
     </div>
 
     <script>
         function calcola(operazione) {
-            // Ottieni i valori inseriti dall'utente
+            
             var num1 = parseFloat(document.getElementById('numero1').value);
             var num2 = parseFloat(document.getElementById('numero2').value);
             var risultato;
 
-            // Verifica se i numeri inseriti sono validi
+           
             if (isNaN(num1) || isNaN(num2)) {
                 alert('Per favore inserisci numeri validi');
                 return;
             }
 
-            // Esegui l'operazione selezionata
+           
             switch (operazione) {
                 case '+':
                     risultato = num1 + num2;
@@ -82,7 +82,7 @@
                     break;
             }
 
-            // Mostra il risultato nell'input di sola lettura
+           
             document.getElementById('risultato').value = risultato;
         }
     </script>
