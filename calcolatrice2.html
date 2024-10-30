@@ -3,100 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcolatrice</title>
+    <title>Calcolatrice Minima</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
+            margin: 0;
         }
-        .calculator {
-            background-color: white;
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
-        input, button {
-            margin: 5px;
+        input[type="text"] {
+            width: 200px;
             padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             font-size: 16px;
         }
         button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px;
             cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        h1 {
+            color: #333;
+        }
+        input[readonly] {
+            background-color: #e9ecef;
         }
     </style>
 </head>
 <body>
 
-<div class="calculator">
-    <input type="text" id="input" placeholder="Inserisci espressione" />
-    <br>
-    <button onclick="selezionaOperazione('+')">Somma</button>
-    <button onclick="selezionaOperazione('-')">Sottrazione</button>
-    <button onclick="selezionaOperazione('*')">Moltiplicazione</button>
-    <button onclick="selezionaOperazione('/')">Divisione</button>
-    <button onclick="eseguiCalcolo()">=</button>
-    <br>
-    <input type="text" id="result" placeholder="Risultato" readonly />
-</div>
+    <div class="container">
+        <h1>Calcolatrice Minima</h1>
+        
+        <input type="text" id="input" placeholder="Inserisci un numero">
+        <br>
+        
+        <button onclick="operazione('+')">+</button>
+        <button onclick="operazione('-')">-</button>
+        <button onclick="operazione('*')">*</button>
+        <button onclick="operazione('/')">/</button>
+        <button onclick="calcola()">=</button>
+        
+        <br>
+        <input type="text" id="risultato" placeholder="Risultato" readonly>
+    </div>
 
-<script>
-    let operazioneCorrente = '';
+    <script>
+        let numerouno = null;
+        let numerodue = null;
+        let operazioneSelezionata = null;
 
-    function selezionaOperazione(operazione) {
-        operazioneCorrente = operazione;
-        document.getElementById('input').value = ''; // Pulisci l'input
-    }
-
-    function eseguiCalcolo() {
-        const input = document.getElementById('input').value;
-        const numeri = input.split(/[\s]+/); // Dividi l'input per spazi
-
-        if (numeri.length !== 2) {
-            document.getElementById('result').value = 'NaN'; // Mostra NaN se non ci sono due numeri
-            return;
-        }
-
-        const num1 = parseFloat(numeri[0]);
-        const num2 = parseFloat(numeri[1]);
-        let risultato;
-
-       
-        if (isNaN(num1) || isNaN(num2)) {
-            document.getElementById('result').value = 'NaN'; // Mostra NaN se uno dei numeri non è valido
-        } else {
-            switch (operazioneCorrente) {
-                case '+':
-                    risultato = num1 + num2;
-                    break;
-                case '-':
-                    risultato = num1 - num2;
-                    break;
-                case '*':
-                    risultato = num1 * num2;
-                    break;
-                case '/':
-                    if (num2 === 0) {
-                        document.getElementById('result').value = 'NaN'; // Mostra NaN se divisione per zero
-                        return;
-                    }
-                    risultato = num1 / num2;
-                    break;
-                default:
-                    document.getElementById('result').value = 'NaN'; // Mostra NaN se operazione non valida
-                    return;
+        function operazione(op) {
+            if (document.getElementById("input").value !== '') {
+                numerouno = parseFloat(document.getElementById("input").value);
+                operazioneSelezionata = op;
+                document.getElementById("input").value = ''; 
+            } else {
+                document.getElementById("risultato").value = "Inserisci un numero.";
             }
-    
-            document.getElementById('result').value = num1 + " " + operazioneCorrente + " " + num2 + " = " + risultato;
         }
 
-        document.getElementById('input').value = ''; // Pulisci l'input
-        operazioneCorrente = ''; // Reset l'operazione
-    }
-</script>
+        function calcola() {
+            numerodue = parseFloat(document.getElementById("input").value);
+            let r;
+
+            if (operazioneSelezionata && !isNaN(numerouno) && !isNaN(numerodue)) {
+                switch (operazioneSelezionata) {
+                    case '+':
+                        r = numerouno + numerodue;
+                        break;
+                    case '-':
+                        r = numerouno - numerodue;
+                        break;
+                    case '*':
+                        r = numerouno * numerodue;
+                        break;
+                    case '/':
+                        if (numerodue === 0) {
+                            r = "N/A"; 
+                        } else {
+                            r = numerouno / numerodue;
+                        }
+                        break;
+                }
+                document.getElementById("risultato").value = r; 
+                operazioneSelezionata = null; 
+                numerouno = r; 
+            } else {
+                document.getElementById("risultato").value = "Inserisci un secondo numero.";
+            }
+        }
+    </script>
 
 </body>
 </html>
