@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Versione 3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: right;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        button:active {
+            background-color: #004085;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .wide {
+            grid-column: span 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Versione 3</h1>
+        
+        <input type="text" id="input" placeholder="0" readonly>
+        
+        <div class="buttons">
+            <button onclick="inserisciNumero(1)">1</button>
+            <button onclick="inserisciNumero(2)">2</button>
+            <button onclick="inserisciNumero(3)">3</button>
+            <button onclick="operazione('+')">+</button>
+
+            <button onclick="inserisciNumero(4)">4</button>
+            <button onclick="inserisciNumero(5)">5</button>
+            <button onclick="inserisciNumero(6)">6</button>
+            <button onclick="operazione('-')">-</button>
+
+            <button onclick="inserisciNumero(7)">7</button>
+            <button onclick="inserisciNumero(8)">8</button>
+            <button onclick="inserisciNumero(9)">9</button>
+            <button onclick="operazione('*')">*</button>
+
+            <button onclick="inserisciNumero(0)">0</button>
+            <button class="wide" onclick="cancella()">C</button>
+            <button class="wide" onclick="calcola()">=</button>
+            <button onclick="operazione('/')">/</button>
+        </div>
+    </div>
+
+    <script>
+        let numerouno = null;
+        let numerodue = null;
+        let operazioneSelezionata = null;
+
+        function inserisciNumero(numero) {
+            let input = document.getElementById("input");
+
+            if (input.value === '0' || input.value === 'N/A') {
+                input.value = numero;
+            } else {
+                const valoreCorrente = input.value;
+                input.value = valoreCorrente + numero;
+            }
+        }
+
+        function operazione(op) {
+            if (document.getElementById("input").value !== '' && document.getElementById("input").value !== 'N/A') {
+                numerouno = parseFloat(document.getElementById("input").value);
+                operazioneSelezionata = op;
+                document.getElementById("input").value = ''; 
+            } else {
+                alert("Inserisci un numero.");
+            }
+        }
+
+        function calcola() {
+            numerodue = parseFloat(document.getElementById("input").value);
+            let r;
+
+            if (operazioneSelezionata && !isNaN(numerouno) && !isNaN(numerodue)) {
+                switch (operazioneSelezionata) {
+                    case '+':
+                        r = numerouno + numerodue;
+                        break;
+                    case '-':
+                        r = numerouno - numerodue;
+                        break;
+                    case '*':
+                        r = numerouno * numerodue;
+                        break;
+                    case '/':
+                        if (numerodue === 0) {
+                            r = "N/A"; 
+                        } else {
+                            r = numerouno / numerodue;
+                        }
+                        break;
+                }
+                document.getElementById("input").value = r;
+                if (r === "N/A") {
+                    numerouno = null; 
+                    operazioneSelezionata = null;
+                } else {
+                    numerouno = r; 
+                }
+            } else {
+                alert("Inserisci un secondo numero.");
+            }
+        }
+
+        function cancella() {
+            document.getElementById("input").value = '0'; 
+            numerouno = null;
+            numerodue = null;
+            operazioneSelezionata = null;
+        }
+    </script>
+</body>
+</html>
