@@ -154,7 +154,7 @@
             let tabella = document.getElementById('tabellaDati').getElementsByTagName('tbody')[0];
             let nuovaRiga = tabella.insertRow();
 
-            for (let i = 0; i < 6; i++) {
+            for (let i = 0; i < matriceDati.length; i++) {
                 let cella = nuovaRiga.insertCell(i);
                 cella.textContent = matriceDati[matriceDati.length - 1][i];
             }
