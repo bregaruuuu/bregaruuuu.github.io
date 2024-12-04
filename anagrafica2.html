@@ -100,8 +100,6 @@
 
     <script>
         let matriceDati = [];
-
-        // Funzione di validazione con espressioni regolari
         function validareEmail(email) {
             const regexEmail = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
             return regexEmail.test(email);
@@ -113,19 +111,14 @@
         }
 
         function validareDati(nome, cognome, indirizzo, citta, email, codiceFiscale) {
-            // Controllo dell'email
             if (!validareEmail(email)) {
                 alert("L'email inserita non è valida.");
                 return false;
             }
-
-            // Controllo del codice fiscale
             if (!validareCodiceFiscale(codiceFiscale)) {
                 alert("Il codice fiscale inserito non è valido.");
                 return false;
             }
-
-            // Controlli di base per nome, cognome, indirizzo e città (devono essere non vuoti)
             if (nome === "" || cognome === "" || indirizzo === "" || citta === "") {
                 alert("Tutti i campi devono essere compilati!");
                 return false;
@@ -142,15 +135,11 @@
             let email = document.getElementById('email').value;
             let codiceFiscale = document.getElementById('codiceFiscale').value;
 
-            // Validazione dei dati inseriti
             if (!validareDati(nome, cognome, indirizzo, citta, email, codiceFiscale)) {
                 return;
             }
-
-            // Aggiunta dei dati alla matrice
             matriceDati.push([nome, cognome, indirizzo, citta, email, codiceFiscale]);
-
-            // Aggiornamento della tabella
+            
             let tabella = document.getElementById('tabellaDati').getElementsByTagName('tbody')[0];
             let nuovaRiga = tabella.insertRow();
 
@@ -158,8 +147,6 @@
                 let cella = nuovaRiga.insertCell(i);
                 cella.textContent = matriceDati[matriceDati.length - 1][i];
             }
-
-            // Pulizia dei campi di input
             document.getElementById('nome').value = "";
             document.getElementById('cognome').value = "";
             document.getElementById('indirizzo').value = "";
