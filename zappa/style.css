@@ -1,46 +1,103 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     margin-bottom: 100px;
-  }
-  header {
+    background-color: #f7f7f7;
+}
+
+header {
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
-  }
-  nav {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header img {
+    margin-bottom: 10px;
+    border-radius: 50%;
+}
+
+nav {
     background-color: #f5f5f5;
     padding: 10px;
-  }
-  nav ul {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-  }
-  nav ul li {
+    transition: all 0.3s ease;
+}
+
+nav ul li {
     margin-right: 20px;
-  }
-  nav ul li a {
+}
+
+nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-  }
-  main {
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+main {
     padding: 20px;
-  }
-  section {
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+section {
     margin-bottom: 20px;
-  }
-  #adidas{
-    height: 250px;
-    width: 300px;
-  }
-  footer {
+}
+
+#Pimg {
+    height: 400px;
+    width: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.nome {
+    font-weight: bolder;
+    color: #ff6347;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.cent {
+    text-align: center;
+}
+
+#notizie .accordion-button {
+    background-color: #ff6347;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#notizie .accordion-button:hover {
+    background-color: #ff4500;
+}
+
+footer {
     background-color: #333;
     color: #fff;
     padding: 10px;
@@ -49,16 +106,59 @@ body {
     left: 0;
     bottom: 0;
     width: 100%;
-  }
-.nome{
-    font-weight: bolder;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
-p{
-    text-align: justify;
+
+footer p {
+    margin: 0;
 }
-.cent{
+
+#adidas {
+    height: 250px;
+    width: 300px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#quizForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#quizForm label {
+    font-weight: bold;
+}
+
+#quizForm input[type="radio"] {
+    margin-right: 10px;
+}
+
+#quizForm button {
+    padding: 10px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#quizForm button:hover {
+    background-color: #ff4500;
+}
+
+#results {
+    margin-top: 20px;
     text-align: center;
-}
-#Pimg{
-    height: 400px;
+    font-weight: bold;
 }
