@@ -1,213 +1,64 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* Body */
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-    color: #333;
-}
-
-/* Header */
-header {
+    margin-bottom: 100px;
+  }
+  header {
     background-color: #333;
     color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 30px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-header img {
-    width: 150px;
-    border-radius: 50%;
-    margin-bottom: 15px;
-}
-
-header h1 {
-    font-size: 3em;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-/* Navigation */
-nav {
-    background-color: #222;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
+  }
+  nav {
+    background-color: #f5f5f5;
+    padding: 10px;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 25px;
-}
-
-nav ul li a {
-    color: #fff;
-    font-weight: 600;
+  }
+  nav ul li {
+    margin-right: 20px;
+  }
+  nav ul li a {
     text-decoration: none;
-    font-size: 1.1em;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-nav ul li a:hover {
-    color: #ff6347;
-    transform: translateY(-3px);
-}
-
-/* Main Content */
-main {
-    padding: 50px 20px;
-    margin-top: 40px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-}
-
-section {
-    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+  }
+  main {
     padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    color: #222;
-    font-size: 2.5em;
+  }
+  section {
     margin-bottom: 20px;
-    text-align: center;
-    font-weight: bold;
-}
-
-section p {
-    text-align: justify;
-    line-height: 1.8;
-    font-size: 1.1em;
-}
-
-.cent {
-    text-align: center;
-}
-
-.nome {
-    color: #ff6347;
-    font-weight: bolder;
-}
-
-#Pimg {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    animation: fadeIn 2s ease-in-out;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-#notizie .accordion-button {
-    background-color: #ff6347;
-    color: #fff;
-    font-weight: bold;
-    padding: 15px;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease;
-}
-
-#notizie .accordion-button:hover {
-    background-color: #ff4500;
-}
-
-/* Footer */
-footer {
+  }
+  #adidas{
+    height: 250px;
+    width: 300px;
+  }
+  footer {
     background-color: #333;
     color: #fff;
+    padding: 10px;
     text-align: center;
-    padding: 15px;
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    font-size: 1em;
+  }
+.nome{
+    font-weight: bolder;
 }
-
-footer p {
-    margin: 0;
+p{
+    text-align: justify;
 }
-
-/* Form Styles */
-#quizForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-#quizForm label {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-#quizForm input[type="radio"] {
-    margin-right: 10px;
-}
-
-#quizForm button {
-    padding: 12px 20px;
-    background-color: #ff6347;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
-}
-
-#quizForm button:hover {
-    background-color: #ff4500;
-}
-
-#results {
+.cent{
     text-align: center;
-    font-weight: bold;
-    margin-top: 20px;
 }
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    section h2 {
-        font-size: 2em;
-    }
-
-    #quizForm {
-        gap: 10px;
-    }
-
-    #quizForm label {
-        font-size: 1em;
-    }
-
-    footer {
-        font-size: 0.9em;
-    }
-}
+#Pimg{
+    height: 400px;
+}.
