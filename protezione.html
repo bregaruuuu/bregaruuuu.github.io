@@ -1,25 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/sicurezza.css">
     <script src="https://kit.fontawesome.com/e657377ddb.js" crossorigin="anonymous"></script>
     <title>Educazione Stradale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header-generale {
+            background-color: #2c3e50;
+            padding: 20px;
+            color: white;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .open-sidebar {
+            cursor: pointer;
+        }
+
+        .navbar .pages {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar .pages a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .title-section {
+            background-color: #e74c3c;
+            padding: 50px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .paragrafo1, .paragrafo2, .paragrafo3 {
+            margin-bottom: 30px;
+        }
+
+        h1, h2 {
+            font-size: 24px;
+            color: #2c3e50;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .faq-box .faq {
+            margin-bottom: 15px;
+        }
+
+        .faq-label {
+            font-weight: bold;
+            cursor: pointer;
+            color: #2980b9;
+        }
+
+        .faq-content {
+            display: none;
+            margin-top: 10px;
+            padding-left: 20px;
+            font-size: 14px;
+            color: #34495e;
+        }
+
+        .faq input[type="checkbox"]:checked + .faq-label + .faq-content {
+            display: block;
+        }
+
+        .footer-generale {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-generale .logo h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .footer-generale .contatti p, .footer-generale .indirizzo p {
+            font-size: 14px;
+        }
+
+        .footer-generale .contatti a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-generale .contatti a i {
+            margin-right: 8px;
+        }
+
+        .footer-generale .diritti {
+            margin-top: 20px;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
     <header class="header-generale">
         <nav class="navbar">
             <input type="checkbox" id="sidebar-active">
             <label for="sidebar-active" class="open-sidebar">
-                <svg class="open" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+                <svg class="open" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
+                    <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+                </svg>
             </label>
             <label for="sidebar-active" id="overlay"></label>
             <div class="pages">
                 <label for="sidebar-active" class="close-sidebar">
-                    <svg class="close" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg> 
+                    <svg class="close" xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#5f6368">
+                        <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+                    </svg> 
                 </label>
-                <a href="https://alessiomazza07.github.io/educazionecivica/page/index.html"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="https://bregaruuuu.github.io/indexeducazionestradale.html#content"><i class="fa-solid fa-house"></i> Home</a>
                 <a href="https://bregaruuuu.github.io/regolamento.html"><i class="fa-solid fa-book"></i> Regolamento</a>
                 <a href="https://bregaruuuu.github.io/formazione.html"><i class="fa-solid fa-school"></i> Formazione</a>
                 <a href="https://bregaruuuu.github.io/protezione.html"><i class="fa-solid fa-shield"></i> Protezione</a>
@@ -34,34 +158,28 @@
     <div class="container">
         <div class="paragrafo1">
             <p>
-                La sicurezza stradale riguarda tutte le misure e i comportamenti volti a prevenire incidenti, 
-                proteggere la vita dei cittadini e garantire che le strade siano un ambiente sicuro per tutti, 
-                dai pedoni agli automobilisti.<br> Adottare regole di sicurezza non è solo un obbligo legale, 
-                ma anche un atto di responsabilità verso sé stessi e gli altri.<br><br>
-                Le norme di sicurezza si dividono in base al soggetto coinvolto:
+                La sicurezza sulle strade comprende tutte le azioni e le precauzioni che mirano a evitare incidenti, proteggere la vita delle persone e assicurare un ambiente sicuro per tutti, dai pedoni agli automobilisti. Rispettare le regole non è solo un obbligo legale, ma un segno di responsabilità verso se stessi e gli altri.<br><br>
+                Le norme di sicurezza si suddividono in base all'utente della strada:
                 <div class="faq-box">
                     <div class="faq">
                       <input type="checkbox" id="faq1">
                       <label class="faq-label" for="faq1">Automobilisti</label>
                       <div class="faq-content">
-                        Prestare particolare attenzione ai pedoni e ai ciclisti, soprattutto in prossimità delle strisce pedonali 
-                        e nelle zone residenziali. Mantenere una distanza di sicurezza e segnalare sempre le manovre per garantire 
-                        la massima sicurezza a tutti gli utenti della strada.
+                        È fondamentale prestare attenzione ai pedoni e ai ciclisti, in particolare vicino alle strisce pedonali e nelle zone residenziali. Mantenere una distanza di sicurezza e segnalare ogni manovra sono azioni essenziali per garantire la sicurezza di tutti.
                       </div>
                     </div>
                     <div class="faq">
                       <input type="checkbox" id="faq2">
                       <label class="faq-label" for="faq2">Pedoni</label>
                       <div class="faq-content">
-                        Attraversare solo sulle strisce pedonali e rispettare i semafori. Essere visibili, soprattutto di notte, è essenziale. 
+                        I pedoni devono attraversare solo sulle strisce pedonali e rispettare i semafori. Di notte, è essenziale essere visibili.
                       </div>
                     </div>
                     <div class="faq">
                       <input type="checkbox" id="faq3">
                       <label class="faq-label" for="faq3">Ciclisti</label>
                       <div class="faq-content">
-                        Utilizzare il casco, segnalare le manovre con le braccia e rispettare le regole di circolazione. 
-                        Equipaggiare la bicicletta con luci e catarifrangenti è obbligatorio.
+                        I ciclisti devono usare il casco, segnalare le manovre e rispettare le regole di circolazione. Inoltre, le biciclette devono essere dotate di luci e catarifrangenti.
                       </div>
                     </div>
                 </div>
@@ -71,52 +189,32 @@
         <div class="paragrafo2">
             <h2>Comportamenti Responsabili</h2>
             <p>
-                Rispettare le regole del codice della strada è fondamentale per garantire la sicurezza di tutti gli utenti della strada. 
-                <br>Ecco alcuni comportamenti responsabili da adottare:
+                Rispetto delle leggi stradali è cruciale per garantire la sicurezza per tutti gli utenti della strada. 
+                <br> Alcuni comportamenti responsabili da seguire includono:
                 <ul>
-                    <li>
-                        Uso delle cinture di sicurezza
-                    </li>
-                    <li>    
-                        Importanza dei seggiolini per bambini
-                    </li>
-                    <li>
-                        La guida in stato di sobrietà (limiti alcolici)
-                    </li>
-                    <li>
-                        L'uso del casco per motociclisti e ciclisti
-                    </li>
-                    <li>
-                        Comportamenti corretti in caso di emergenze o incidenti
-                    </li>
-                    <li>
-                        Rispetto dei limiti di velocità
-                    <li>
-                        Evitare distrazioni alla guida. Mantenere 
-                        l'attenzione sulla strada è una priorità.
-                    </li>
+                    <li>Uso delle cinture di sicurezza</li>
+                    <li>Importanza dei seggiolini per bambini</li>
+                    <li>Guida in stato di sobrietà (rispetto dei limiti alcolici)</li>
+                    <li>Uso obbligatorio del casco per motociclisti e ciclisti</li>
+                    <li>Comportamenti corretti in caso di incidenti</li>
+                    <li>Rispettare i limiti di velocità</li>
+                    <li>Evitare distrazioni durante la guida. La concentrazione sulla strada è fondamentale.</li>
                 </ul>
             </p>
         </div>
         <hr>
         <div class="paragrafo3">
-            <h2>In caso d'emergenza</h2>
+            <h2>In caso di emergenza</h2>
             <p>
-                In situazione d'emergenza o incidente è di primaria necessità segnalare il veicolo fermo posizionando il 
-                triangolo di emergenza ad almeno 50 metri dal veicolo e accendendo le luci di emergenza ed
-                è obbligatorio indossare il giubbotto riflettente quando si scende dall'auto.<br>
-                In presenza di feriti a seguito di un incidente, è fondamentale mantenere la calma e chiamare il prima possibile 
-                il numero di emergenza appropriato. Evitare di spostare i feriti a meno che non siano 
-                in pericolo imminente. Fornire informazioni chiare ai soccorritori e rimanere con i feriti per offrire 
-                supporto fino all'arrivo dei professionisti.
-                <br><br>
-                Ecco i numeri di emergenza da chiamare:
+                In caso di emergenza o incidente, è importante segnalare il veicolo fermo mettendo il triangolo di emergenza a una distanza di almeno 50 metri e accendere le luci di emergenza. È obbligatorio anche indossare il giubbotto riflettente quando si scende dall'auto.<br>
+                In caso di feriti, mantenere la calma e chiamare immediatamente i numeri di emergenza. Non spostare i feriti a meno che non siano in pericolo imminente. Fornire informazioni precise ai soccorritori e restare con i feriti fino all’arrivo dei professionisti.<br><br>
+                Ecco i numeri di emergenza da contattare:
                 <ul>
                     <li>118: emergenze sanitarie e ambulanza</li>
-                    <li>113: polizia in caso di incidenti o situazioni di pericolo</li>
-                    <li>112: numero unico per le emergenze, che comprende Carabinieri e Polizia</li>
-                    <li>115: vigili del fuoco in caso di incendi o emergenze</li>
-                    <li>803.116: soccorso stradale in caso di guasti o incidenti al veicolo</li>
+                    <li>113: polizia in caso di incidenti o pericolo</li>
+                    <li>112: numero unico per tutte le emergenze (Carabinieri e Polizia)</li>
+                    <li>115: vigili del fuoco in caso di incendio o altre emergenze</li>
+                    <li>803.116: soccorso stradale per guasti o incidenti al veicolo</li>
                 </ul>
             </p>
         </div>
@@ -129,15 +227,8 @@
         <div class="contatti">
             <h2>Contatti</h2>
             <a href="mailto: calugaru.gabriele@itiscannizaro.edu.it">
-                <i class="fa-solid fa-envelope"></i><p> mazza.alessio@itiscannizaro.edu.it</p>
+                <i class="fa-solid fa-envelope"></i><p> calugaru.gabriele@itiscannizaro.edu.it</p>
             </a>
-        </div>
-        <div class="social">
-            <h3>Follow us on</h3>
-            <a href="https://www.facebook.com/share/18XKKMzULi/"><i class="fa-brands fa-facebook"></i> <p>Facebook</p></a>
-            <a href="https://x.com/AlessioMazza20?t=I8jaFxF---Z-BsS_F0Vgbw&s=09"><i class="fa-brands fa-square-twitter"></i> <p>X</p></a>
-            <a href="https://www.instagram.com/ale.maz1907?igsh=bmk5MDZwNmk4YnI4"><i class="fa-brands fa-instagram"></i> <p>Instagram</p></a>
-            <a href="https://www.tiktok.com/@alemaz1907?_t=ZN-8uJgzEY6CIQ&_r=1"><i class="fa-brands fa-tiktok"></i> <p>TikTok</p></a>
         </div>
         <div class="indirizzo">
             <p>Indirizzo: <i class="fa fa-map-marked-alt"></i> Via R. Sanzio, 2 Rho - Milano (MI)</p>
