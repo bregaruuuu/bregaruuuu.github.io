@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educazione Stradale - Innovazioni Tecnologiche</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        main {
+            padding: 3rem 1.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            background-color: #007BFF;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        article {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33% - 2rem);
+        }
+
+        article h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        article ul {
+            margin-top: 1rem;
+            padding-left: 20px;
+        }
+
+        article .image-gallery {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        article .image-gallery img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer .footer-logo {
+            margin-bottom: 1rem;
+        }
+
+        footer .footer-contact,
+        footer .footer-address {
+            margin: 1rem 0;
+        }
+
+        footer .social-links a {
+            display: block;
+            margin: 0.5rem 0;
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Educazione Stradale</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                <li><a href="codice.html"><i class="fa-solid fa-book"></i> Codice</a></li>
+                <li><a href="educazione.html"><i class="fa-solid fa-school"></i> Educazione</a></li>
+                <li><a href="sicurezza.html"><i class="fa-solid fa-shield"></i> Sicurezza</a></li>
+                <li><a href="tecnologia.html"><i class="fa-solid fa-wrench"></i> Tecnologia</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Innovazioni tecnologiche per la sicurezza stradale</h2>
+            <p class="intro-text">Esplora come la tecnologia sta cambiando il mondo della guida, migliorando la sicurezza per tutti gli utenti della strada.</p>
+        </section>
+
+        <section class="content">
+            <article class="system">
+                <h3>Sistemi di Assistenza alla Guida</h3>
+                <p>Scopri come i sistemi ADAS (Advanced Driver Assistance Systems) contribuiscono alla sicurezza stradale e al comfort del conducente.</p>
+                <ul>
+                    <li><strong>Frenata automatica di emergenza (ABS)</strong>: Rileva ostacoli e interviene automaticamente per frenare.</li>
+                    <li><strong>Mantenimento della corsia (LKA)</strong>: Mantiene il veicolo nella sua corsia intervenendo sul volante.</li>
+                    <li><strong>Blind Spot Detection (BSA)</strong>: Aiuta ad evitare incidenti nei punti ciechi del veicolo.</li>
+                </ul>
+                <div class="image-gallery">
+                    <img src="images/abs.jpg" alt="Frenata automatica di emergenza">
+                    <img src="images/lka.png" alt="Mantenimento della corsia">
+                    <img src="images/bsa.png" alt="Blind Spot Detection">
+                </div>
+            </article>
+
+            <article class="safety">
+                <h3>Sicurezza Pedoni e Ciclisti</h3>
+                <p>La tecnologia sta facendo passi avanti anche per proteggere le categorie più vulnerabili sulla strada, come pedoni e ciclisti.</p>
+                <ul>
+                    <li><strong>Rilevamento di pedoni e ciclisti</strong>: Sensori avanzati e telecamere identificano le presenze per evitare incidenti.</li>
+                    <li><strong>Airbag esterni</strong>: In alcuni veicoli, airbag esterni si attivano per proteggere i pedoni in caso di impatto.</li>
+                    <li><strong>Illuminazione intelligente</strong>: Fari adattivi che migliorano la visibilità senza abbagliare gli altri.</li>
+                </ul>
+                <div class="image-gallery">
+                    <img src="images/adas-pedoni-ciclisti.jpg" alt="Sicurezza pedoni e ciclisti">
+                </div>
+            </article>
+
+            <article class="technology">
+                <h3>Ruolo della Tecnologia nell'Educazione Stradale</h3>
+                <p>Le tecnologie moderne stanno trasformando l'educazione stradale, rendendola più coinvolgente e accessibile a tutti.</p>
+                <ul>
+                    <li><strong>Simulazioni virtuali</strong>: Esperienze sicure per apprendere come affrontare situazioni reali.</li>
+                    <li><strong>App educative</strong>: Giochi interattivi e applicazioni per imparare le regole della strada divertendosi.</li>
+                    <li><strong>Video e piattaforme online</strong>: Risorse facili da usare per insegnanti e studenti, anche a distanza.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-logo">
+            <h1>Educazione Stradale</h1>
+        </div>
+        <div class="footer-contact">
+            <p><strong>Contatti:</strong> calugaru.gabriele@itiscannizaro.edu.it</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/18XKKMzULi/"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                <a href="https://x.com/AlessioMazza20"><i class="fa-brands fa-square-twitter"></i> X</a>
+                <a href="https://www.instagram.com/ale.maz1907"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                <a href="https://www.tiktok.com/@alemaz1907"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+            </div>
+        </div>
+        <div class="footer-address">
+            <p>Indirizzo: Via R. Sanzio, 2 Rho - Milano (MI)</p>
+        </div>
+        <div class="footer-credit">
+            <p>&copy; 2025 Calugaru Gabriele Razvan. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+</body>
+</html>
