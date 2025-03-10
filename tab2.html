@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carica e Visualizza CSV</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 30px;
+        background-color: #f0f8ff;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h2 {
+        text-align: center;
+        font-size: 28px;
+        color: #2a9d8f;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      input[type="file"] {
+        padding: 12px;
+        margin: 10px 0;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #2a9d8f;
+        color: white;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      input[type="file"]:hover {
+        background-color: #21867a;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background-color: white;
+        border: 1px solid #ddd;
+      }
+
+      th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #4CAF50;
+        color: white;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #ddd;
+      }
+
+      #contenuto {
+        margin-top: 20px;
+      }
+
+      canvas {
+        margin-top: 30px;
+        max-width: 100%;
+        max-height: 500px;
+      }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <h2>Carica e visualizza il file CSV</h2>
+
+    <input type="file" id="myfile" name="seleziona file" accept=".csv" onchange="apri(this)">
+    
+    <div id="contenuto"></div>
+    <canvas id="grafico"></canvas>
+
+   <script>
+  function apri(input) {
+    let file = input.files[0];
+
+    if (file && file.type === 'text/csv') {
+      let reader = new FileReader();
+      reader.readAsText(file);
+
+      reader.onload = function() {
+        let contenuto = reader.result;
+        let righe = contenuto.split('\n');
+        let tabella = document.createElement('table');
+        
+        let intestazione = righe[0].split(',');
+        let trIntestazione = document.createElement('tr');
+        for (let colonna of intestazione) {
+          let th = document.createElement('th');
+          th.textContent = colonna.replace(/\"/g, '');
+          trIntestazione.appendChild(th);
+        }
+        tabella.appendChild(trIntestazione);
+
+        let etichetteGrafico = [];  
+        let datiGrafico = [];
+        for (let i = 1; i < righe.length; i++) {
+          if (righe[i].trim() === "") continue;
+          let colonne = righe[i].split(',');
+          if (colonne.length < 2) continue; 
+          let tr = document.createElement('tr');
+          for (let colonna of colonne) {
+            let td = document.createElement('td');
+            td.textContent = colonna.replace(/\"/g, '');
+            tr.appendChild(td);
+          }
+          tabella.appendChild(tr);
+
+          
+          let valore = parseFloat(colonne[1].replace(/\"/g, '').trim());  
+          if (!isNaN(valore)) {
+            etichetteGrafico.push(colonne[0].trim());  
+            datiGrafico.push(valore);  
+          }
+        }
+
+        
+        console.log("Etichette:", etichetteGrafico);
+        console.log("Dati:", datiGrafico);
+
+        
+        if (etichetteGrafico.length === 0 || datiGrafico.length === 0) {
+          alert("Nessun dato valido per il grafico.");
+          return;
+        }
+
+        document.getElementById('contenuto').innerHTML = '';
+        document.getElementById('contenuto').appendChild(tabella);
+
+        
+        creaGrafico(etichetteGrafico, datiGrafico);
+      };
+    } else {
+      alert("Per favore, carica un file CSV valido.");
+    }
+  }
+
+  function creaGrafico(etichette, dati) {
+    const ctx = document.getElementById('grafico').getContext('2d');
+    
+    new Chart(ctx, {
+      type: 'line', 
+      data: {
+        labels: etichette, 
+        datasets: [{
+          label: 'Andamento dei Dati',
+          data: dati, 
+          backgroundColor: 'rgba(40, 167, 69, 0.7)', 
+          borderColor: 'rgba(40, 167, 69, 1)', 
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          tooltip: {
+            enabled: false 
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true 
+          }
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
