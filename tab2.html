@@ -3,81 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caricamento e Visualizzazione CSV</title>
+    <title>Carica e Visualizza il CSV</title>
     <style>
       body {
-        font-family: 'Helvetica Neue', sans-serif;
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f4f9;
         margin: 0;
-        padding: 40px;
-        background-color: #e0f7fa;
-        color: #333;
+        padding: 0;
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        min-height: 100vh;
       }
 
       h2 {
+        font-size: 28px;
+        color: #333;
         text-align: center;
-        font-size: 32px;
-        color: #0288d1;
-        margin-bottom: 25px;
-        font-weight: 500;
+        margin-bottom: 20px;
       }
-
       input[type="file"] {
-        padding: 10px;
-        margin: 15px 0;
-        border: 2px solid #bbb;
-        border-radius: 5px;
-        background-color: #0288d1;
+        font-size: 16px;
+        padding: 12px 20px;
+        background-color: #4CAF50;
         color: white;
-        font-size: 18px;
+        border: none;
+        border-radius: 5px;
         cursor: pointer;
-        transition: background-color 0.2s ease;
+        transition: background-color 0.3s ease;
       }
 
       input[type="file"]:hover {
-        background-color: #0277bd;
+        background-color: #45a049;
       }
 
       table {
         width: 90%;
-        border-collapse: collapse;
         margin-top: 30px;
-        background-color: #fff;
-        border: 1px solid #aaa;
+        border-collapse: collapse;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
       }
 
       th, td {
         padding: 12px;
         text-align: left;
-        border: 1px solid #ccc;
+        border: 1px solid #ddd;
       }
 
       th {
-        background-color: #2196f3;
+        background-color: #4CAF50;
         color: white;
       }
 
       tr:nth-child(even) {
-        background-color: #fafafa;
+        background-color: #f2f2f2;
       }
 
       tr:hover {
-        background-color: #f1f1f1;
+        background-color: #ddd;
+      }
+      canvas {
+        margin-top: 40px;
+        width: 90%;
+        max-width: 800px;
+        max-height: 500px;
       }
 
       #data-container {
         margin-top: 30px;
       }
-
-      canvas {
-        margin-top: 35px;
-        width: 100%;
-        max-height: 500px;
-      }
-
     </style>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -86,7 +81,7 @@
 
     <h2>Carica il tuo file CSV e visualizza i dati</h2>
 
-    <input type="file" id="fileInput" name="file" accept=".csv" onchange="handleFile(this)">
+    <input type="file" id="fileInput" accept=".csv" onchange="handleFile(this)">
     
     <div id="data-container"></div>
     <canvas id="chartCanvas"></canvas>
@@ -145,7 +140,7 @@
           createChart(labels, data);
         };
       } else {
-        alert("Si prega di caricare un file CSV valido.");
+        alert("Per favore, carica un file CSV valido.");
       }
     }
 
@@ -159,18 +154,17 @@
           datasets: [{
             label: 'Andamento dei Dati',
             data: data,
-            backgroundColor: 'rgba(33, 150, 243, 0.6)',
-            borderColor: 'rgba(33, 150, 243, 1)',
-            borderWidth: 2
+            backgroundColor: 'rgba(76, 175, 80, 0.3)',
+            borderColor: '#4CAF50',
+            borderWidth: 2,
+            pointBackgroundColor: '#4CAF50',
+            pointBorderColor: '#fff',
+            pointBorderWidth: 2,
+            pointRadius: 4
           }]
         },
         options: {
           responsive: true,
-          plugins: {
-            tooltip: {
-              enabled: true
-            }
-          },
           scales: {
             y: {
               beginAtZero: true
