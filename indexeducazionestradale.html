@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educazione Stradale - Innovazioni Tecnologiche</title>
     <style>
+        /* Reset and global styles */
         * {
             margin: 0;
             padding: 0;
@@ -12,24 +13,27 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f8f8;
+            font-family: 'Roboto', sans-serif;
+            background-color: #F7F7F7;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Header styles */
         header {
-            background-color: #007BFF;
+            background-color: #111;
             color: white;
-            padding: 1rem;
+            padding: 1.5rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: bold;
         }
 
         nav ul {
@@ -38,101 +42,162 @@
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
 
         nav ul li a {
             color: white;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
-        main {
-            padding: 3rem 1.5rem;
+        nav ul li a:hover {
+            color: #007BFF;
         }
 
+        /* Hero Section */
         .hero {
-            text-align: center;
-            background-color: #007BFF;
+            background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
             color: white;
-            padding: 2rem;
-            border-radius: 8px;
+            text-align: center;
+            padding: 100px 20px;
+            font-size: 2.5rem;
+            font-weight: bold;
+            background-blur: 10px;
+            position: relative;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
-        .intro-text {
+        .hero p {
             font-size: 1.2rem;
-            margin-top: 1rem;
+            margin-top: 10px;
+        }
+
+        .button-hero {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-hero:hover {
+            background-color: #0056b3;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 3rem 1.5rem;
         }
 
         .content {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
+            justify-content: space-between;
         }
 
         article {
             background-color: #ffffff;
-            border-radius: 8px;
+            border-radius: 12px;
             padding: 2rem;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
             flex: 1 1 calc(33% - 2rem);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        article:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
         }
 
         article h3 {
             font-size: 1.8rem;
+            color: #111;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        article p {
+            font-size: 1rem;
             margin-bottom: 1rem;
         }
 
         article ul {
             margin-top: 1rem;
             padding-left: 20px;
+            font-size: 1rem;
+            color: #666;
         }
 
-        article .image-gallery {
+        .image-gallery {
             display: flex;
-            gap: 10px;
+            gap: 15px;
             margin-top: 1rem;
         }
 
-        article .image-gallery img {
+        .image-gallery img {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Footer Styles */
         footer {
-            background-color: #333;
+            background-color: #111;
             color: white;
             padding: 2rem;
             text-align: center;
+            margin-top: 3rem;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
         }
 
-        footer .footer-logo {
+        footer .footer-logo h1 {
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        footer .footer-contact,
-        footer .footer-address {
-            margin: 1rem 0;
+        footer .footer-contact p,
+        footer .footer-address p {
+            font-size: 1rem;
+            color: #ddd;
+            margin: 10px 0;
         }
 
-        footer .social-links a {
-            display: block;
-            margin: 0.5rem 0;
-            color: white;
+        footer .footer-contact p a {
+            color: #007BFF;
             text-decoration: none;
         }
 
-        footer .social-links a:hover {
+        footer .footer-contact p a:hover {
             text-decoration: underline;
         }
 
-        footer p {
+        footer .footer-credit p {
             font-size: 0.9rem;
+            color: #bbb;
+            margin-top: 1rem;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .content {
+                flex-direction: column;
+            }
+
+            article {
+                flex: 1 1 100%;
+            }
         }
     </style>
 </head>
@@ -152,14 +217,15 @@
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Innovazioni tecnologiche per la sicurezza stradale</h2>
-            <p class="intro-text">Esplora come la tecnologia sta cambiando il mondo della guida, migliorando la sicurezza per tutti gli utenti della strada.</p>
-        </section>
+    <section class="hero">
+        <h2>Innovazioni tecnologiche per la sicurezza stradale</h2>
+        <p>Esplora come la tecnologia sta cambiando il mondo della guida, migliorando la sicurezza per tutti gli utenti della strada.</p>
+        <a href="#content" class="button-hero">Scopri di più</a>
+    </section>
 
-        <section class="content">
-            <article class="system">
+    <main>
+        <section class="content" id="content">
+            <article>
                 <h3>Sistemi di Assistenza alla Guida</h3>
                 <p>Scopri come i sistemi ADAS (Advanced Driver Assistance Systems) contribuiscono alla sicurezza stradale e al comfort del conducente.</p>
                 <ul>
@@ -174,7 +240,7 @@
                 </div>
             </article>
 
-            <article class="safety">
+            <article>
                 <h3>Sicurezza Pedoni e Ciclisti</h3>
                 <p>La tecnologia sta facendo passi avanti anche per proteggere le categorie più vulnerabili sulla strada, come pedoni e ciclisti.</p>
                 <ul>
@@ -187,7 +253,7 @@
                 </div>
             </article>
 
-            <article class="technology">
+            <article>
                 <h3>Ruolo della Tecnologia nell'Educazione Stradale</h3>
                 <p>Le tecnologie moderne stanno trasformando l'educazione stradale, rendendola più coinvolgente e accessibile a tutti.</p>
                 <ul>
@@ -204,13 +270,7 @@
             <h1>Educazione Stradale</h1>
         </div>
         <div class="footer-contact">
-            <p><strong>Contatti:</strong> calugaru.gabriele@itiscannizaro.edu.it</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/18XKKMzULi/"><i class="fa-brands fa-facebook"></i> Facebook</a>
-                <a href="https://x.com/AlessioMazza20"><i class="fa-brands fa-square-twitter"></i> X</a>
-                <a href="https://www.instagram.com/ale.maz1907"><i class="fa-brands fa-instagram"></i> Instagram</a>
-                <a href="https://www.tiktok.com/@alemaz1907"><i class="fa-brands fa-tiktok"></i> TikTok</a>
-            </div>
+            <p><strong>Contatti:</strong> mazza.alessio@itiscannizaro.edu.it</p>
         </div>
         <div class="footer-address">
             <p>Indirizzo: Via R. Sanzio, 2 Rho - Milano (MI)</p>
