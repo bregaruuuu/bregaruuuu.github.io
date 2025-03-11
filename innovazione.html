@@ -3,9 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/tecnologia.css">
     <script src="https://kit.fontawesome.com/e657377ddb.js" crossorigin="anonymous"></script>
     <title>Educazione Stradale</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header-generale {
+            background-color: #222;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .pages a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+        }
+
+        .pages a:hover {
+            background-color: #444;
+        }
+
+        .container {
+            margin: 20px;
+        }
+
+        .paragrafo1, .paragrafo2, .paragrafo3 {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            color: #444;
+            font-size: 24px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 10px;
+        }
+
+        .title-section {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        .title {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        .footer-generale {
+            background-color: #333;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .footer-generale .logo h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .footer-generale .contatti, .footer-generale .indirizzo, .footer-generale .diritti {
+            margin-bottom: 20px;
+        }
+
+        .footer-generale i {
+            margin-right: 10px;
+        }
+
+        .footer-generale .social a {
+            margin-right: 20px;
+        }
+
+        .footer-generale .social a i {
+            font-size: 20px;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        .open-sidebar {
+            cursor: pointer;
+        }
+
+        #sidebar-active:checked ~ .pages {
+            display: block;
+        }
+
+        #sidebar-active:checked ~ .pages .close-sidebar {
+            display: block;
+        }
+
+        .pages {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+
+        .close-sidebar {
+            display: none;
+        }
+
+        .close-sidebar svg {
+            color: #fff;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        .open-sidebar svg {
+            color: #fff;
+        }
+
+        .pages a {
+            color: #fff;
+            font-size: 20px;
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .pages a:hover {
+            background-color: #444;
+        }
+
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+        }
+
+        #sidebar-active:checked ~ #overlay {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <header class="header-generale">
@@ -33,57 +202,41 @@
     </div>
     <div class="container">
         <div class="paragrafo1">
-            <h2>Sistemi di Assistenza alla Guida nei Veicoli</h2>
+            <h2>Sistemi Avanzati di Supporto alla Guida</h2>
             <p>
-                I sistemi di assistenza alla guida (ADAS) stanno trasformando il modo 
-                in cui i veicoli interagiscono con il conducente e l'ambiente circostante. Questi sistemi sono progettati 
-                per prevenire incidenti e ridurre il carico di lavoro del conducente, migliorando la sicurezza stradale. <br>
-                Tra le tecnologie più diffuse si possono trovare: <br>
+                I sistemi avanzati di supporto alla guida (ADAS) stanno rivoluzionando l'interazione tra veicoli, conducente e ambiente circostante. Queste tecnologie sono progettate per prevenire incidenti e alleggerire il conducente, migliorando la sicurezza stradale. <br>
+                Tra le tecnologie più comuni ci sono: <br>
                 <ul>
-                    <li>Frenata automatica di emergenza (ABS): rileva ostacoli improvvisi e attiva i freni</li>
+                    <li>Frenata automatica in situazioni critiche (ABS): riconosce ostacoli improvvisi e attiva i freni autonomamente</li>
                     <img src="../images/abs.jpg" alt="abs"><br>
-                    <li>Mantenimento della corsia (LKA): aiuta ad evitare deviazioni involontarie intervendo sul volante</li>
+                    <li>Assistenza al mantenimento della corsia (LKA): previene il cambio di corsia accidentale intervenendo sul volante</li>
                     <img src="../images/lka.png" alt="lka"><br>
-                    <li>Blind Spot Detection (BSA): monitora gli angoli ciechi del veicolo facilitando i sorpassi</li>
+                    <li>Sistema di rilevamento angoli ciechi (BSA): monitora gli angoli non visibili e facilita le manovre di sorpasso</li>
                     <img src="../images/bsa.png" alt="bsa"><br>
                 </ul>
-                Questi sistemi non sostituiscono l'esperienza umana, ma agiscono come strumenti di supporto per ridurre gli errori umani, 
-                che sono responsabili della maggior parte degli incidenti stradali.
+                Questi sistemi non sostituiscono l'abilità del conducente, ma operano come strumenti di supporto per ridurre gli errori umani, responsabili della maggior parte degli incidenti stradali.
             </p>
         </div>
         <hr>
         <div class="paragrafo2">
-            <h2>Innovazioni per la sicurezza di pedoni e ciclisti</h2>
+            <h2>Soluzioni per la Sicurezza di Pedoni e Ciclisti</h2>
             <p>
-                Le innovazioni tecnologiche stanno giocando un ruolo cruciale nel proteggere le categorie più vulnerabili 
-                sulla strada, come pedoni e ciclisti. I sistemi di rilevamento pedoni e ciclisti, integrati nei veicoli 
-                moderni, utilizzano sensori e telecamere per identificare la presenza di persone o biciclette nelle 
-                vicinanze, attivando avvisi sonori e visivi o la frenata automatica se necessario. <br>
+                Le tecnologie moderne stanno giocando un ruolo fondamentale nella protezione dei pedoni e dei ciclisti, i soggetti più vulnerabili sulla strada. I sensori e le telecamere installate nei veicoli rilevano la presenza di pedoni e ciclisti nelle vicinanze, attivando avvisi acustici o visivi o, in casi estremi, il sistema di frenata automatica. <br>
                 <img src="../images/adas-pedoni-ciclisti.jpg" alt="adas-pedoni-ciclisti"><br>
-                Inoltre, in rari casi alcune automobili sono equipaggiate con airbag esterni per pedoni, che si attivano 
-                in caso di impatto per ridurre lesioni gravi. <br>
-                Anche l'illuminazione intelligente, come i fari adattivi, migliora la visibilità notturna, illuminando 
-                specificamente pedoni e ciclisti senza abbagliare altri utenti della strada. <br>
-                Parallelamente, infrastrutture come semafori intelligenti e attraversamenti pedonali con sensori stanno 
-                rendendo le strade più sicure, creando un ambiente dove pedoni, ciclisti e veicoli possono coesistere in 
-                modo più armonioso.
+                Inoltre, alcuni veicoli avanzati sono dotati di airbag esterni, che si attivano in caso di collisione con pedoni, riducendo il rischio di lesioni gravi. <br>
+                Anche l'illuminazione intelligente, come i fari adattivi, aumenta la visibilità notturna, illuminando specificamente pedoni e ciclisti senza abbagliare gli altri utenti della strada. <br>
+                Le infrastrutture stradali, come semafori intelligenti e attraversamenti pedonali con sensori, rendono l'ambiente stradale più sicuro, facilitando una convivenza più sicura tra veicoli, pedoni e ciclisti.
             </p>
         </div>
         <hr>
         <div class="paragrafo3">
-            <h2>Ruolo della tecnologia</h2>
+            <h2>L'Impatto della Tecnologia sull'Educazione Stradale</h2>
             <p>
-                Le tecnologie moderne stanno rivoluzionando l'educazione stradale, rendendola più coinvolgente e accessibile. <br>
-                L'uso di simulazioni virtuali e della realtà aumentata consente agli studenti di vivere situazioni realistiche, 
-                come attraversare incroci o affrontare condizioni meteorologiche difficili, in un ambiente sicuro e privo di 
-                rischi. <br>
-                Le app educative e i giochi interattivi insegnano le regole della strada in modo ludico, mentre i 
-                simulatori di guida permettono ai giovani di sperimentare la guida in scenari realistici, come traffico intenso 
-                o emergenze. <br>
-                Inoltre, piattaforme online e video didattici offrono risorse facilmente accessibili per insegnanti 
-                e famiglie, rendendo l'apprendimento continuo e disponibile anche fuori dalla scuola. <br>
-                Queste tecnologie, oltre ad aumentare l'efficacia dell'insegnamento, sono particolarmente adatte alle nuove 
-                generazioni, sempre più abituate all'utilizzo di strumenti digitali.
+                Le tecnologie digitali stanno trasformando l'insegnamento dell'educazione stradale, rendendo il processo più coinvolgente e accessibile. <br>
+                Grazie all'uso di simulazioni e realtà aumentata, gli studenti possono vivere situazioni stradali realistiche come attraversare incroci trafficati o affrontare condizioni climatiche avverse, in un ambiente sicuro e protetto. <br>
+                Le applicazioni educative e i giochi interattivi insegnano le regole del traffico in modo divertente, mentre i simulatori di guida offrono esperienze pratiche in scenari realistici. <br>
+                Inoltre, le risorse didattiche online e i video tutorial consentono a insegnanti e studenti di accedere facilmente a contenuti formativi, anche al di fuori della scuola, favorendo l'apprendimento continuo. <br>
+                Queste tecnologie sono ideali per le nuove generazioni, che sono sempre più abituate a interagire con strumenti digitali.
             </p>
         </div>
     </div>
@@ -94,8 +247,7 @@
         </div>
         <div class="contatti">
             <h2>Contatti</h2>
-                <i class="fa-solid fa-envelope"></i><p> calugaru.gabriele@itiscannizzaro.edu.it</p>
-            </a>
+            <i class="fa-solid fa-envelope"></i><p> calugaru.gabriele@itiscannizzaro.edu.it</p>
         </div>
         <div class="indirizzo">
             <p>Indirizzo: <i class="fa fa-map-marked-alt"></i> Via R. Sanzio, 2 Rho - Milano (MI)</p>
@@ -106,4 +258,3 @@
     </footer>
 </body>
 </html>
-
