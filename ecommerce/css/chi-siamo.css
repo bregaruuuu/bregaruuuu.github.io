@@ -1,0 +1,199 @@
+/* Reset dei margini e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Stili per la navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navlink {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 0 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.navlink:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.navlink i {
+    margin-left: 5px;
+}
+
+/* Barra di ricerca */
+.searchbar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 5px 10px;
+}
+
+.searchbar input {
+    border: none;
+    padding: 8px;
+    border-radius: 25px;
+    margin-right: 10px;
+    width: 200px;
+}
+
+.searchbar input:focus {
+    outline: none;
+}
+
+.searchbar button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.searchbar button:hover {
+    background-color: #555;
+}
+
+/* Stili per il contenuto principale */
+main {
+    padding: 2rem 10%;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.titolo-principale {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contenuto {
+    text-align: center;
+    padding: 2rem;
+}
+
+.sottotitolo {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.testo {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Stili per il footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+footer .logo-footer h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+footer .contatti-footer,
+footer .social-footer,
+footer .info-footer {
+    margin-top: 20px;
+}
+
+footer h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ff6347;
+}
+
+footer .info-footer p {
+    font-size: 1rem;
+}
+
+footer .info-footer i {
+    margin-right: 10px;
+}
+
+/* Media queries per la responsività */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .searchbar {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .logo-footer,
+    footer .contatti-footer,
+    footer .social-footer,
+    footer .info-footer {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .contenuto {
+        padding: 1rem;
+    }
+}
